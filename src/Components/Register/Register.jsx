@@ -15,15 +15,20 @@ export default function Register() {
 
   async function registersubmuit(values) {
     setLoding(true);
-    let { data } = await axios
-      .post(`https://ecommerce.routemisr.com/api/v1/auth/signup`, values)
-      .catch((err) => {
-        setApiError(err.response.data.message);
+    try {
+      let { data } = await axios.post(
+        `https://ecommerce.routemisr.com/api/v1/auth/signup`,
+        values
+      );
+      if (data.message === "success") {
         setLoding(false);
-      });
-    if (data.message === "success") {
-     loading(false)
-      navigate("/login");
+        navigate("/login");
+      }
+    } catch (err) {
+      setApiError(
+        err.response?.data?.message || "Registration failed. Please try again."
+      );
+      setLoding(false);
     }
   }
 
