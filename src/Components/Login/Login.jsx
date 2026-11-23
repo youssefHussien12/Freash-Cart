@@ -12,7 +12,7 @@ export default function Login() {
   let [loding, setLoding] = useState(false);
   let [apiError, setApiError] = useState("");
   let navigate = useNavigate();
-  let { setUserToken, setUserData } = useContext(UserContext);
+  let { setUserToken } = useContext(UserContext);
   async function loginsubmuit(values) {
     setLoding(true);
     let { data } = await axios

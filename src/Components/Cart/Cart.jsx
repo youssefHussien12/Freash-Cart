@@ -38,6 +38,7 @@ async function UpdateItem(id ,count){
   }
 }
 
+// eslint-disable-next-line react-hooks/exhaustive-deps
 useEffect(()=>{ getItems()},[])
 
  return <>

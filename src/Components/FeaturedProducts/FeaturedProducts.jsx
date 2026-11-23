@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
-import styles from './FeaturedProducts.module.css';
+import React, { useContext } from 'react';
 import axios from 'axios';
 import { BallTriangle } from 'react-loader-spinner';
 import { Link } from 'react-router-dom';
@@ -17,7 +16,7 @@ let {addToCart} = useContext(CartContext);
 
 async function postToCart(id){
   let {data} = await addToCart(id)
-if (data.status == 'success') {
+if (data.status === 'success') {
 toast.success('Product added successfully', {
   duration:2000,
   className:'bg-main text-light',
@@ -27,7 +26,7 @@ toast.success('Product added successfully', {
 }
 async function postToWish(id){
   let {data} = await addToWish(id)
-  if (data.status == 'success') {
+  if (data.status === 'success') {
     toast.success('Product added successfully', {
       duration:2000,
       className:'bg-main text-light',

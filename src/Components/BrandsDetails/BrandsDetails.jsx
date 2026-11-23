@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import styles from './BrandsDetails.module.css';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { BallTriangle } from 'react-loader-spinner';
@@ -21,6 +20,7 @@ async function getBarndsDetails(id){
 
  useEffect(()=>{
  getBarndsDetails(id)
+// eslint-disable-next-line react-hooks/exhaustive-deps
 },[])
 
  

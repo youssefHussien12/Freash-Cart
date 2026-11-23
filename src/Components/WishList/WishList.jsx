@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import styles from './WishList.module.css';
 import { WishContext } from '../../Context/WishContext';
 import { BallTriangle } from 'react-loader-spinner';
 import { CartContext } from '../../Context/CartContext';
@@ -19,7 +18,7 @@ export default function WishList() {
 
   async function postToCart(id){
     let {data} = await addToCart(id)
-  if (data.status == 'success') {
+  if (data.status === 'success') {
   toast.success(data.message , {
     duration:3000,
   })
@@ -37,7 +36,7 @@ async function getItems(){
 async function deleteItem(id){
   setLoading(true)
   let {data} = await deleteWishItem(id)
-  if (data.status == 'success') {
+  if (data.status === 'success') {
     toast.error('Product deleted successfully', {
       duration:2000,
       className:'bg-danger text-light',
@@ -55,6 +54,7 @@ async function deleteItem(id){
     setLoading(false)
 }
 
+// eslint-disable-next-line react-hooks/exhaustive-deps
 useEffect(()=>{getItems()},[])
  
  

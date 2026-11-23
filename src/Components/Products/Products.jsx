@@ -17,7 +17,7 @@ export default function Products() {
 
   async function postToCart(id){
     let {data} = await addToCart(id)
-  if (data.status == 'success') {
+  if (data.status === 'success') {
   toast.success(data.message , {
     duration:3000,
   })
@@ -27,7 +27,7 @@ export default function Products() {
   async function postToWish(id){
     let {data} = await addToWish(id)
     console.log(data);
-  if (data.status == 'success') {
+  if (data.status === 'success') {
   toast.success(data.message , {
     duration:3000,
   })

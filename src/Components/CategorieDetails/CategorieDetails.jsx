@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import styles from './CategorieDetails.module.css';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { BallTriangle } from 'react-loader-spinner';
@@ -22,6 +21,7 @@ async function getCategoresDetails(id){
 
  useEffect(()=>{
 getCategoresDetails(id)
+// eslint-disable-next-line react-hooks/exhaustive-deps
 },[])
  
  return <>

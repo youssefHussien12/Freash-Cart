@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import styles from "./ProductDetails.module.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { BallTriangle } from "react-loader-spinner";
@@ -25,12 +24,12 @@ export default function ProductDetails() {
   let { addToCart } = useContext(CartContext);
 
   async function postToCart(id) {
-    let { data } = await addToCart(id);
+    await addToCart(id);
   }
   async function postToWish(id){
     let {data} = await addToWish(id)
     console.log(data);
-  if (data.status == 'success') {
+  if (data.status === 'success') {
   toast.success(data.message , {
     duration:3000,
   })
@@ -52,6 +51,7 @@ export default function ProductDetails() {
 
   useEffect(() => {
     getProductDetails(id);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

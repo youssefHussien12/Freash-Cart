@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
-import styles from './AllOrders.module.css';
+import React, { useEffect, useState } from 'react';
 import { jwtDecode } from 'jwt-decode';
 import axios from 'axios';
 import { BallTriangle } from 'react-loader-spinner';
@@ -19,6 +18,7 @@ export default function AllOrders() {
       setAllOrders(data)
       setLoading(false)
   }
+ // eslint-disable-next-line react-hooks/exhaustive-deps
  useEffect(()=>{ getUserOrdres() }, [])
 
   

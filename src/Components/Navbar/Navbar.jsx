@@ -24,6 +24,7 @@ export default function Navbar() {
   let  {data} = await getCartItems()
   setCart(data)
 }
+// eslint-disable-next-line react-hooks/exhaustive-deps
 useEffect(()=>{ getItems()} , [])
  
  

@@ -1,5 +1,5 @@
 import "./App.css";
-import { RouterProvider, createBrowserRouter, createHashRouter } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import Products from "./Components/Products/Products";
 import Cart from "./Components/Cart/Cart";
@@ -49,6 +49,7 @@ export default function App() {
     if (localStorage.getItem("userToken")) {
       setUserToken(localStorage.getItem("userToken"));
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

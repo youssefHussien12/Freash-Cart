@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import styles from './ShippingAddress.module.css';
 import { useFormik } from 'formik';
 import { useParams } from 'react-router-dom';
 import { CartContext } from '../../Context/CartContext';
@@ -13,7 +12,7 @@ export default function ShippingAddress() {
 
  async function checkOut(values){
   let {data} = await checkOutSession(cartId , values)
-  if (data.status == 'success') {
+  if (data.status === 'success') {
     window.location.href = data.session.url
     
   }
